@@ -5,8 +5,9 @@
 
 {% for post in all_posts %}
 <div class="blog-post">
+
     <h2 class="blog-post-title">{{post.title}}</h2>
-    <p>{{post.date_posted}} | {{post.author}}</p>
+    <p><img class="rounded-circle" src="{{post.author.profile.image.url}}" width="35" height="30"> {{post.author}} | {{post.date_posted}}</p>
     <p>{{post.content}}</p>
 </div><hr>{% endfor %}
 <nav class="blog-pagination">
