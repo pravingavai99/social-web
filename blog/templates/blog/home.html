@@ -6,7 +6,7 @@
 {% for post in all_posts %}
 <div class="blog-post">
 
-    <h2 class="blog-post-title">{{post.title}}</h2>
+    <h2 class="blog-post-title"><a href="{% url 'post-detail' post.id %}">{{post.title}} </a></h2>
     <p><img class="rounded-circle" src="{{post.author.profile.image.url}}" width="35" height="30"> {{post.author}} | {{post.date_posted}}</p>
     <p>{{post.content}}</p>
 </div><hr>{% endfor %}
