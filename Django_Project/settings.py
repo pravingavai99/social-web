@@ -115,6 +115,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+                                              # Any OS can join this project or website
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')   # media directory created outside of all i.e. to the base directory
+MEDIA_URL = '/media/'
+
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 LOGIN_REDIRECT_URL='index'
 LOGIN_URL='login'
