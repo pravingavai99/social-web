@@ -2,19 +2,14 @@
 {% block title %}Home{% endblock %}
 {% block content %}
 <h1 class="blog-post-title">{{post.title}}</h1>
-<p><img class="rounded-circle" src="{{post.author.profile.image.url}}" width="35" height="30"> {{post.author}} |
+<p><a href=""> <img class="rounded-circle" src="{{post.author.profile.image.url}}" width="35" height="30"> {{post.author}}</a> |
     {{post.date_posted}}</p>
 {% if post.author == user %}
-<button class="btn btn-outline-success mx-1 mr-3"><a href="{% url 'post-update' post.id %}">Edit</a></button>
-<button class="btn btn-outline-success mx-1 mr-3"><a href="{% url 'confirm_delete' post.id %}">Delete</a></button>
+<a href="{% url 'post-update' post.id %}"><button class="btn btn-outline-success mx-1 mr-3">Edit</button></a>
+<a href="{% url 'post-delete' post.id %}"><button class="btn btn-outline-success mx-1 mr-3">Delete</button></a>
 {% endif %}
 <p>{{post.content}}</p>
 </form>
 <hr>
-<nav class="blog-pagination">
-    <a class="btn btn-outline-primary" href="#">Older</a>
-    <a class="btn btn-outline-secondary disabled" href="#" tabindex="-1" aria-disabled="true">Newer</a>
-</nav>
-<br>
 
 {% endblock content%}
