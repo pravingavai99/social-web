@@ -2,7 +2,7 @@
 {% block title %}Home{% endblock %}
 {% block content %}
 <h1 class="blog-post-title">{{post.title}}</h1>
-<p><a href=""> <img class="rounded-circle" src="{{post.author.profile.image.url}}" width="35" height="30"> {{post.author}}</a> |
+<p><a href="{% url 'user-posts' post.author.username %}"> <img class="rounded-circle" src="{{post.author.profile.image.url}}" width="35" height="30"> {{post.author}}</a> |
     {{post.date_posted}}</p>
 {% if post.author == user %}
 <a href="{% url 'post-update' post.id %}"><button class="btn btn-outline-success mx-1 mr-3">Edit</button></a>

@@ -25,16 +25,7 @@ class UserPostListView(ListView):
     def get_queryset(self):
         user = get_object_or_404(User, username=self.kwargs.get('username'))
         return Post.objects.filter(author=user).order_by('-date_posted')
-'''
-class UserPostListView(ListView):
-    model = Post
-    template_name = 'blog/user_post_list_list'
-    context_object_name = 'all_posts'
-    paginate_by = 8
-    def get_queryset(self):
-        user= get_object_or_404(User, username=self.kwargs.get('username'))
-        return Post.objects.filter(author=user).order_by('-date_posted')
-'''
+
 class PostDetailView(DetailView):
     model = Post
 

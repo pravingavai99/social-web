@@ -10,7 +10,7 @@ urlpatterns = [
     path('post/<int:pk>/update/', PostUpdateView.as_view(), name='post-update'),
     path('post/new/', PostCreateView.as_view(), name='post-create'),
     path('about/', views.about, name='about'),
-    #path('user/<str:username>/', UserPostListView.as_view(), name='user-posts'),
+    path('user/<str:username>/', UserPostListView.as_view(), name='user-posts'), #filtered posts
    # path('user/<str:username>/', UserPostListView.as_view(), name='user_post_list'),
 
 ]
